@@ -11,6 +11,11 @@ class Point:
         y = self.y + other.y
         return Point(x, y)
 
+    def __lt__(self, other):
+        self_mag = (self.x**2) + (self.y**2)
+        other_mag = (other.x**2) + (other.y**2)
+        return self_mag < other_mag
+
 
 p1 = Point(1, 2)
 p2 = Point(-1, 2)
@@ -18,3 +23,5 @@ print(str(p1))
 print(str(p2))
 p3 = p1+p2
 print(str(p3))
+print(p1<p3)
+print(Point(8, 9) < Point())
